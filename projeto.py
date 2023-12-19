@@ -52,93 +52,96 @@ def function():
             img = Image.open('ausentes2.png')
             st.image(img, caption='Verificando se os dados ausentes foram deletados')
             
-            st.write('')
-            st.write('O gráfico à direita, em branco, mostra que todos os valores nulos foram eliminados do dataset.')
-            st.write('Em seguida, foi feita a análise da variável alvo:')
+        st.write('')
+        st.write('O gráfico à direita, em branco, mostra que todos os valores nulos foram eliminados do dataset.')
+        st.write('Em seguida, foi feita a análise da variável alvo:')
 
-            st.subheader('Gráfico de Distribuição da variável alvo - Purchase')
-            img = Image.open('distribuicao_purchase.png')
-            st.image(img, caption='Distribuição de Purchase')
-            st.write('A média maior que a mediana indica uma assimetria à direita na curva representativa dos dados.')
-            st.write('')
+        st.subheader('Gráfico de Distribuição da variável alvo - Purchase')
+        img = Image.open('distribuicao_purchase.png')
+        st.image(img, caption='Distribuição de Purchase')
+        st.write('A média maior que a mediana indica uma assimetria à direita na curva representativa dos dados.')
+        st.write('')
             
-            st.subheader('Boxplot da variável alvo - Purchase')
-            img = Image.open('boxplot_purchase.png')
-            st.image(img, caption='Boxplot de Purchase')
+        st.subheader('Boxplot da variável alvo - Purchase')
+        img = Image.open('boxplot_purchase.png')
+        st.image(img, caption='Boxplot de Purchase')
 
-            st.subheader('Estatísticas Descritivas de Purchase')
-            img = Image.open('descr_purchase.png')
-            st.image(img, caption='Descrição de Purchase')
+        st.subheader('Estatísticas Descritivas de Purchase')
+        img = Image.open('descr_purchase.png')
+        st.image(img, caption='Descrição de Purchase')
     
-            st.write('')
-            st.write('Os gráficos refletem que os dados seguem uma distribuição quase normal. Também podem ser observados alguns outliers em valores acima de, aproximadamente, 20.000, como representado no boxplot, justificando a assimetria da curva representativa dos dados.')
-            st.write('O desvio padrão relativamente alto em relação à média sugere que os valores são dispersos, e a presença de outliers pode ser uma razão para essa dispersão. Os quartis também ajudam a entender como os valores estão distribuídos ao longo do intervalo de dados:')
-            st.markdown('''
-                - 25% das compras tem um valor igual ou inferior a $ 5.823,00;
-                - 50% das compras tem um valor igual ou inferior a $ 8.047,00;
-                - 75% das compras tem um valor igual ou inferior a $ 12.054,00''')
-            st.write('A diferença entre o terceiro e o primeiro quartil (IQR) é de aproximadamente 6,231, um IQR relativamente grande também sugere uma dispersão considerável nos dados. A grande diferença entre o terceiro quartil (75%) e o valor máximo (max) reforça a existência de outliers no lado superior da distribuição, indicando observações com valores muito acima da média.')
-            st.write('')
+        st.write('')
+        st.write('Os gráficos refletem que os dados seguem uma distribuição quase normal. Também podem ser observados alguns outliers em valores acima de, aproximadamente, 20.000, como representado no boxplot, justificando a assimetria da curva representativa dos dados.')
+        st.write('O desvio padrão relativamente alto em relação à média sugere que os valores são dispersos, e a presença de outliers pode ser uma razão para essa dispersão. Os quartis também ajudam a entender como os valores estão distribuídos ao longo do intervalo de dados:')
+        st.markdown('''
+                        - 25% das compras tem um valor igual ou inferior a $ 5.823,00;
+                        - 50% das compras tem um valor igual ou inferior a $ 8.047,00;
+                        - 75% das compras tem um valor igual ou inferior a $ 12.054,00
+                    ''')
+        st.write('A diferença entre o terceiro e o primeiro quartil (IQR) é de aproximadamente 6,231, um IQR relativamente grande também sugere uma dispersão considerável nos dados. A grande diferença entre o terceiro quartil (75%) e o valor máximo (max) reforça a existência de outliers no lado superior da distribuição, indicando observações com valores muito acima da média.')
+        st.write('')
             
-            st.subheader('Analisando outliers das variáveis numéricas')
-            st.write('')
-            img = Image.open('outliers.png')
-            st.image(img, caption='Outliers')
-            st.write('''Verificamos a existência de outliers nas colunas Product_Category_1 e Purchase, mas como a porcentagem de outliers 
-            é baixa, então, como temos uma quantidade razoável de dados, optamos por deletar esses registros para que os mesmos não influenciem no estudo.''')
-            st.write('')
+        st.subheader('Analisando outliers das variáveis numéricas')
+        st.write('')
+        img = Image.open('outliers.png')
+        st.image(img, caption='Outliers')
+        st.write('''
+                    Verificamos a existência de outliers nas colunas Product_Category_1 e Purchase, mas como a porcentagem de outliers 
+                    é baixa, então, como temos uma quantidade razoável de dados, optamos por deletar esses registros para que os mesmos não influenciem no estudo.
+                ''')
+        st.write('')
             
-            col1, col2 = st.columns(2)
-            col3, col4 = st.columns(2)
-            col5, col6 = st.columns(2)
-            col7, col8 = st.columns(2)
+        col1, col2 = st.columns(2)
+        col3, col4 = st.columns(2)
+        col5, col6 = st.columns(2)
+        col7, col8 = st.columns(2)
         
-            with col1:
+        with col1:
                 st.subheader('Gender x Purchase')
                 img = Image.open('gender_purchase.png')
                 st.image(img, caption='Gender x Purchase')
                 st.write('Em média, homens gastam mais que mulheres.')
 
-            with col2:
+        with col2:
                 st.subheader('Age x Purchase')
                 img = Image.open('age_purchase.png')
                 st.image(img, caption='Age x Purchase')
                 st.write('''Os maiores consumidores são homens na faixa etária de 26 a 35 anos.
                             Os menores de idade são quem menos consome.''')
 
-            with col3:
+        with col3:
                 st.subheader('Occupation x Purchase')
                 img = Image.open('occ_purchase.png')
                 st.image(img, caption='Occupation x Purchase')
                 st.write('O total gasto em compras varia bastante em relação à profissão do cliente.')
 
-            with col4:
+        with col4:
                 st.subheader('City_Category x Purchase')
                 img = Image.open('city_purchase.png')
                 st.image(img, caption='City_Category x Purchase')
                 st.write('''Clientes de cidades da categoria B são os que mais consomem.
                             Isso pode ser influenciado por diversos fatores, como: tamanho da população, nível de renda, demografia, acesso a lojas, necessidades e preferências do consumidor, entre outros.''')
 
-            with col5:
+        with col5:
                 st.subheader('Stay_In_Current_City_Years x Purchase')
                 img = Image.open('years_purchase.png')
                 st.image(img, caption='Years in city x Purchase')
                 st.write('''Pessoas que vivem há mais de um ano na cidade compram e gastam menos.
                             O maior consumo é de pessoas entre 1 e 2 anos na cidade.''')
 
-            with col6:
+        with col6:
                 st.subheader('Marital_Status x Purchase')
                 img = Image.open('ms_purchase.png')
                 st.image(img, caption='Marital Status x Purchase')
                 st.write('Solteiros consomem mais do que os casados.')
 
-            with col7:
+        with col7:
                 st.subheader('Product_Category_1 x Purchase')
                 img = Image.open('categories_purchase_1.png')
                 st.image(img, caption='Category_1 x Purchase')
                 st.write('Os produtos com mais vendas são os produtos que tem a categoria 5 como categoria principal.')
 
-            with col8:
+         with col8:
                 st.subheader('Product_Category_1 x Purchase')
                 img = Image.open('categories_purchase_2.png')
                 st.image(img, caption='Category_1 x Purchase')
