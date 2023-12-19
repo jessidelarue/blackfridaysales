@@ -33,7 +33,8 @@ def function():
                         - ***Product_Category_1:*** categoria principal do produto
                         - ***Product_Category_2:*** categoria secundária do produto
                         - ***Product_Category_3:*** categoria terciária do produto
-                        - ***Purchase:*** valor da compra (variável alvo)''')
+                        - ***Purchase:*** valor da compra (variável alvo)
+                    ''')
 
     with st.expander("Ver análise exploratória"):
         st.header('Análise Exploratória dos dados', divider='grey')
@@ -187,5 +188,5 @@ def function():
                     É importante aplicar outros modelos mais complexos que consigam prever valores mais próximos dos reais e que atinjam métricas mais satisfatórias.
                 ''')
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
         function()
