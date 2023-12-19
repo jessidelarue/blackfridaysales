@@ -156,7 +156,7 @@ def function():
         new_df = pd.DataFrame(new_data)
         st.write(new_df)
         
-     with st.expander('Ver resultados do modelo'):
+    with st.expander('Ver resultados do modelo'):
         st.header('Regressão Linear - Resultados', divider='grey')
         st.write('')
         st.write('Após a aplicação do modelo de Regressão Linear, estes foram alguns dos resultados:')
