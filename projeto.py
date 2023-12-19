@@ -141,7 +141,7 @@ def function():
                 st.image(img, caption='Category_1 x Purchase')
                 st.write('Os produtos com mais vendas são os produtos que tem a categoria 5 como categoria principal.')
 
-         with col8:
+        with col8:
                 st.subheader('Product_Category_1 x Purchase')
                 img = Image.open('categories_purchase_2.png')
                 st.image(img, caption='Category_1 x Purchase')
